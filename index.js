@@ -314,6 +314,7 @@ const generateArn = resource => {
       stack.push(resource.PhysicalResourceId.split('/').slice(-1))
       break
     case 'dynamodb':
+    case 'kms':
     case 'kinesis':
       stack.push(resourceType[2].toLowerCase()+'/'+resource.PhysicalResourceId)
       break
